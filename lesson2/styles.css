@@ -1,0 +1,484 @@
+main {
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+  gap: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.transform-button {
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.transform-button:hover {
+  transform: scale(1.1);
+}
+
+.card {
+  width: 250px;
+  height: 150px;
+  background: linear-gradient(135deg, #3498db, #8e44ad);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover {
+  transform: rotate(5deg) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.box-container {
+  display: flex;
+  gap: 30px;
+  margin: 0px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #e74c3c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: transform 1s ease;
+  position: relative;
+}
+
+.box::before {
+  content: '+';
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.origin-center {
+  transform-origin: center;
+}
+
+.origin-center::before {
+  left: 50%;
+  top: 50%;
+}
+
+.origin-top-left {
+  transform-origin: top left;
+}
+
+.origin-top-left::before {
+  left: 0;
+  top: 0;
+}
+
+.origin-bottom-right {
+  transform-origin: bottom right;
+}
+
+.origin-bottom-right::before {
+  right: 0;
+  bottom: 0;
+}
+
+.box:hover {
+  transform: rotate(45deg);
+}
+
+.main-nav ul {
+  list-style: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.main-nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3498db;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.main-nav a:hover {
+  transform: translateY(-3px);
+  color: #3498db;
+}
+
+.main-nav a:hover::before {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.product-card {
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-10px) scale(1.02) rotate(1deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-content button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card-content button:hover {
+  transform: scale(1.05);
+  background-color: #123852;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.overlay h3 {
+  margin: 0;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover .overlay {
+  transform: translateY(0);
+}
+
+.fancy-button {
+  padding: 12px 30px;
+  background-color: #9b59b6;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fancy-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fancy-button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icon:hover {
+  transform: translateY(-5px) rotate(5deg);
+}
+
+.icon:nth-child(1) {
+  background-color: #3b5998;
+}
+
+.icon:nth-child(2) {
+  background-color: #1da1f2;
+}
+
+.icon:nth-child(3) {
+  background-color: #e1306c;
+}
+
+.icon:nth-child(4) {
+  background-color: #0077b5;
+}
+
+.icon:nth-child(1):hover {
+  background-color: #4c70ba;
+}
+
+.icon:nth-child(2):hover {
+  background-color: #4db5f5;
+}
+
+.icon:nth-child(3):hover {
+  background-color: #e6687e;
+}
+
+.icon:nth-child(4):hover {
+  background-color: #0090d8;
+}
+
+.toggle-container {
+  display: flex;
+  gap: 15px;
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ddd;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-3px);
+  background-color: #e0e0e0;
+}
+
+.toggle-btn:hover .toggle-icon {
+  transform: scale(1.2);
+  background-color: #3498db;
+}
+
+.toggle-btn:active {
+  transform: translateY(1px);
+}
+
+.zoom-container {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.zoom-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.zoom-container:hover img {
+  transform: scale(1.2) rotate(2deg);
+}
+
+.notification-bell {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.bell-icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.bell-body {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 40% 40% 5px 5px;
+}
+
+.bell-clapper {
+  position: absolute;
+  top: 25px;
+  left: 17px;
+  width: 6px;
+  height: 6px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e74c3c;
+  color: white;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.notification-bell:hover .bell-icon {
+  transform: rotate(10deg);
+}
+
+.notification-bell:hover .notification-badge {
+  transform: scale(1.2);
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-trigger {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px) scale(0.8);
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  width: 200px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip-trigger:hover + .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+}

@@ -1,0 +1,379 @@
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+    sans-serif;
+  padding-bottom: 50px;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+  gap: 50px;
+}
+h3 {
+  margin: 10px 0px;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row !important;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(215, 207, 207);
+}
+
+.interactive-list {
+  list-style: none;
+}
+.interactive-list li {
+  display: flex;
+  margin-bottom: 10px;
+  background-color: #eae9e9;
+  width: 200px;
+  height: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  color: rgb(116, 84, 198);
+  transition: color ease 1s, box-shadow 0.5s linear;
+  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  box-shadow: 0 0 5px rgb(116, 84, 198, 0.2);
+}
+.interactive-list li:before {
+  content: '';
+  width: 5px;
+  background-color: cornflowerblue;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  margin-right: 5px;
+  transform-origin: bottom;
+  transform: translateY(100%);
+  visibility: hidden;
+  transition: transform ease 1s, margin-right ease 0.5s;
+}
+.interactive-list li:hover::before {
+  visibility: visible;
+  transform: translateY(0px);
+  margin-right: 10px;
+}
+.interactive-list li:hover {
+  color: rgb(153, 132, 221);
+  transition-delay: 0.5s;
+  box-shadow: 2px 2px 5px 0cqmin rgb(116, 84, 198, 0.3);
+}
+.radio-option {
+  margin-bottom: 10px;
+}
+.radio-option input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+}
+.radio-option label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+.radio-option label::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #3f85b3;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 2;
+  opacity: 0;
+}
+
+.radio-option label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #3f85b3;
+  background-color: #ffffff;
+  opacity: 1;
+}
+
+.radio-option input[type='radio']:checked + label::before {
+  background-color: #3498db;
+  border-color: #3498db;
+  transform-origin: center;
+  opacity: 1;
+  transition: ease 1s;
+}
+
+.radio-option input[type='radio']:focus-visible + label::after {
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.5);
+}
+
+.interactive-card {
+  position: relative;
+  border: 1px solid #efefef;
+  border-radius: 20px;
+  height: 200px;
+  background-color: #b8afff75;
+  color: #121a38;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+  transition: transform ease 1s;
+}
+.card-content {
+  padding: 20px 20px 0px 20px;
+}
+.card-overlay {
+  position: absolute;
+  background-color: #16204634;
+  padding: 10px 30px;
+  width: 100%;
+  bottom: 0;
+  transform: translateY(80%);
+  transition: transform ease 1s;
+}
+.interactive-card:hover .card-overlay {
+  transform: translateY(0%);
+}
+.card-overlay p {
+  transform: translateY(50px);
+  transition: ease 1.5s;
+}
+.interactive-card:hover .card-overlay p {
+  transform: translateY(0%);
+}
+.interactive-card:hover {
+  transform: translateY(-5px);
+}
+.interactive-card:active {
+  transform: scale(0.98) translateY(2px);
+}
+.card-content h3,
+p {
+  transition: ease 1s;
+}
+.card-content h3:hover,
+.card-content p:hover {
+  padding-left: 5px;
+  transition: ease 1s;
+}
+
+.interactive-card:focus {
+  outline: 2px solid #3f85b3;
+  outline-offset: 2px;
+}
+.form-container {
+  width: 600px;
+  margin: auto;
+}
+.form-field {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  align-self: start;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.error-message {
+  visibility: hidden;
+}
+/* Focus state */
+input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+/* Valid state */
+input:valid {
+  border-color: #2ecc71;
+}
+input:invalid:not(:placeholder-shown) {
+  border-color: #e74c3c;
+}
+input:disabled {
+  cursor: not-allowed;
+}
+input:invalid:not(:placeholder-shown) ~ .error-message {
+  visibility: visible;
+  color: #e74c3c;
+  font-size: 10px;
+  animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Main navigation styling */
+.main-nav {
+  display: flex;
+}
+
+.main-nav ul {
+  padding: 0px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: relative;
+}
+
+.main-nav ul li {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.main-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect */
+.main-nav ul li::before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 100%;
+  background-color: #121a38;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform ease 0.3s;
+}
+
+.main-nav ul li:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Active state for current page */
+.main-nav ul li a.active {
+  color: #3498db;
+  font-weight: bold;
+}
+
+.main-nav ul li:has(a.active)::before {
+  transform: scaleX(1);
+  background-color: #3498db;
+}
+
+/* Dropdown styling */
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+/* Show dropdown on hover or focus */
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown items */
+.dropdown li {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 8px 20px;
+  color: #333;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown li a:hover {
+  background-color: #f5f5f5;
+  color: #3498db;
+}
+
+/* Staggered animation for dropdown items */
+.has-dropdown:hover .dropdown li,
+.has-dropdown:focus-within .dropdown li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.has-dropdown:hover .dropdown li:nth-child(1),
+.has-dropdown:focus-within .dropdown li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.has-dropdown:hover .dropdown li:nth-child(2),
+.has-dropdown:focus-within .dropdown li:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.has-dropdown:hover .dropdown li:nth-child(3),
+.has-dropdown:focus-within .dropdown li:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+/* Prevent dropdown from closing when hovering over it */
+.dropdown {
+  margin-top: -1px; /* Ensures no gap between trigger and dropdown */
+}
+
+/* For keyboard accessibility */
+.main-nav ul li a:focus-visible {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+/* Additional polish: Add arrow indicator for dropdown */
+.has-dropdown > a::after {
+  content: ' ▼';
+  font-size: 0.7em;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.has-dropdown:hover > a::after {
+  transform: rotate(180deg);
+}

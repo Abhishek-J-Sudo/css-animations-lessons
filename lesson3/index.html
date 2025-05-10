@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>CSS Animations - lesson 3</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <button class="multi-state-button">Click Me</button>
+      </div>
+      <div class="container">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" required minlength="3" />
+          <p class="help-text">Must be at least 3 characters long</p>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
+          <p class="help-text">Please enter a valid email address</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="custom-checkbox">
+          <input type="checkbox" id="option1" />
+          <label for="option1">Option 1</label>
+        </div>
+
+        <div class="custom-checkbox">
+          <input type="checkbox" id="option2" />
+          <label for="option2">Option 2</label>
+        </div>
+
+        <div class="custom-checkbox">
+          <input type="checkbox" id="option3" disabled />
+          <label for="option3">Option 3 (Disabled)</label>
+        </div>
+      </div>
+      <div class="container">
+        <nav class="tab-nav">
+          <a href="#tab1">Tab 1</a>
+          <a href="#tab2">Tab 2</a>
+          <a href="#tab3">Tab 3</a>
+        </nav>
+
+        <div class="tab-content">
+          <section id="tab1">
+            <h2>Tab 1 Content</h2>
+            <p>This is the content for the first tab.</p>
+          </section>
+
+          <section id="tab2">
+            <h2>Tab 2 Content</h2>
+            <p>This is the content for the second tab.</p>
+          </section>
+
+          <section id="tab3">
+            <h2>Tab 3 Content</h2>
+            <p>This is the content for the third tab.</p>
+          </section>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <h3>Interactive Card</h3>
+            <p>This card demonstrates multiple states.</p>
+            <button class="card-button">Learn More</button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="image-card">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1724604871348-298594ad4eed?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Nature"
+          />
+          <div class="overlay">
+            <h3>Beautiful Nature</h3>
+            <p>Discover the wonders of our planet</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <button class="button-3d">Click Me</button>
+      </div>
+      <div class="container">
+        <nav class="animated-menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="container">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <h3>Hover Me</h3>
+              <p>See what's on the back</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Hello There!</h3>
+              <p>This is the back of the card</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <ul class="staggered-list">
+          <li>
+            <span class="icon">📱</span>
+            <div class="content">
+              <h3>Mobile Development</h3>
+              <p>iOS and Android apps</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon">💻</span>
+            <div class="content">
+              <h3>Web Development</h3>
+              <p>Responsive websites</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon">🎨</span>
+            <div class="content">
+              <h3>UI/UX Design</h3>
+              <p>Beautiful interfaces</p>
+            </div>
+          </li>
+          <li>
+            <span class="icon">📊</span>
+            <div class="content">
+              <h3>Data Analytics</h3>
+              <p>Insights and reporting</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search..." />
+          <button class="search-button">🔍</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Pro Plan</h3>
+            <div class="price">$49<span>/month</span></div>
+          </div>
+          <ul class="features">
+            <li>Unlimited Projects</li>
+            <li>24/7 Support</li>
+            <li>Advanced Analytics</li>
+            <li>Custom Domains</li>
+          </ul>
+          <button class="cta-button">Choose Plan</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="icon-set">
+          <div class="icon-wrapper">
+            <div class="icon">🏠</div>
+            <span class="tooltip">Home</span>
+          </div>
+          <div class="icon-wrapper">
+            <div class="icon">📧</div>
+            <span class="tooltip">Messages</span>
+          </div>
+          <div class="icon-wrapper">
+            <div class="icon">🔔</div>
+            <span class="tooltip">Notifications</span>
+          </div>
+          <div class="icon-wrapper">
+            <div class="icon">⚙️</div>
+            <span class="tooltip">Settings</span>
+          </div>
+        </div>
+        <button class="test11-button">Choose Plan</button>
+      </div>
+    </main>
+  </body>
+</html>

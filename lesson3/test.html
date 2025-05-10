@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="test.css" />
+    <title>Lesson 3 - test</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <ul class="interactive-list">
+          <li>First Item</li>
+          <li>Second Item</li>
+          <li>Third Item</li>
+          <li>Fourth Item</li>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="option1" name="options" checked />
+            <label for="option1">Option 1</label>
+          </div>
+
+          <div class="radio-option">
+            <input type="radio" id="option2" name="options" />
+            <label for="option2">Option 2</label>
+          </div>
+
+          <div class="radio-option">
+            <input type="radio" id="option3" name="options" />
+            <label for="option3">Option 3</label>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="interactive-card" tabindex="0">
+          <div class="card-content">
+            <h3>Interactive Card</h3>
+            <p>This card demonstrates multiple states</p>
+          </div>
+          <div class="card-overlay">
+            <p>Additional information appears here</p>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="form-container">
+          <div class="form-field">
+            <input type="email" placeholder="Enter email address" id="email" required />
+            <label for="email">Email Address</label>
+            <div class="error-message">Please enter a valid email</div>
+          </div>
+
+          <div class="form-field">
+            <input type="text" id="username" disabled />
+            <label for="username">Username (Disabled)</label>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li class="has-dropdown">
+              <a href="#services">Services</a>
+              <ul class="dropdown">
+                <li><a href="#service1">Service 1</a></li>
+                <li><a href="#service2">Service 2</a></li>
+                <li><a href="#service3">Service 3</a></li>
+              </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+  </body>
+</html>
